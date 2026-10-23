@@ -41,14 +41,14 @@ const features = [
         class="relative grid min-h-svh bg-luda-mist lg:grid-cols-[1.05fr_1fr]"
     >
         <aside
-            class="relative hidden overflow-hidden bg-luda-navy p-12 text-white lg:flex lg:flex-col lg:justify-between xl:p-16"
+            class="relative hidden overflow-hidden bg-luda-plum p-12 text-white lg:flex lg:flex-col lg:justify-between xl:p-16"
         >
             <div
-                class="pointer-events-none absolute -top-32 -right-24 size-96 rounded-full bg-luda-blue/40 blur-3xl"
+                class="pointer-events-none absolute -top-32 -right-24 size-96 rounded-full bg-luda-rose/40 blur-3xl"
                 aria-hidden="true"
             ></div>
             <div
-                class="pointer-events-none absolute -bottom-40 -left-24 size-96 rounded-full bg-luda-sky/15 blur-3xl"
+                class="pointer-events-none absolute -bottom-40 -left-24 size-96 rounded-full bg-luda-blush/15 blur-3xl"
                 aria-hidden="true"
             ></div>
             <div
@@ -58,7 +58,7 @@ const features = [
 
             <div class="relative">
                 <span
-                    class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.22em] text-luda-sky uppercase"
+                    class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.22em] text-luda-blush uppercase"
                 >
                     <Sparkles class="size-3.5" />
                     Panel administrativo
@@ -71,7 +71,7 @@ const features = [
                     <br />
                     organizada y
                     <br />
-                    <span class="text-luda-sky">en calma.</span>
+                    <span class="text-luda-blush">en calma.</span>
                 </h2>
 
                 <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
@@ -86,7 +86,7 @@ const features = [
                         class="flex items-start gap-3 text-sm text-white/75"
                     >
                         <span
-                            class="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/10 text-luda-sky ring-1 ring-white/10"
+                            class="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/10 text-luda-blush ring-1 ring-white/10"
                         >
                             <component :is="feature.icon" class="size-4" />
                         </span>
@@ -99,12 +99,12 @@ const features = [
                 class="relative flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] text-white/40"
             >
                 <span class="flex items-center gap-1.5">
-                    <Clock class="size-3.5 text-luda-sky" />
-                    Lun a Vie 9:00 – 17:00
+                    <Clock class="size-3.5 text-luda-blush" />
+                    Lun a Jue 10:00 – 13:00 y 16:00 – 19:00
                 </span>
                 <span class="flex items-center gap-1.5">
-                    <Check class="size-3.5 text-luda-sky" />
-                    Sábados 9:00 – 13:00
+                    <Check class="size-3.5 text-luda-blush" />
+                    Vie 16:00 – 19:00 · Sáb 10:00 – 13:00
                 </span>
             </div>
         </aside>
@@ -113,30 +113,30 @@ const features = [
             class="relative flex min-h-svh items-center justify-center px-4 py-10 sm:px-8"
         >
             <div
-                class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(147,188,208,0.32),transparent_55%)]"
+                class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(252,205,205,0.32),transparent_55%)]"
                 aria-hidden="true"
             ></div>
 
             <div class="relative w-full max-w-md">
                 <Link
                     href="/"
-                    class="mb-7 flex justify-center rounded-2xl outline-none transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-luda-blue/40"
-                    aria-label="Volver al sitio de LuDa Dental"
+                    class="mb-7 flex justify-center rounded-2xl outline-none transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-luda-rose/40"
+                    aria-label="Volver al sitio de Diseñando Sonrisas"
                 >
                     <BrandLogo
                         :src="branding?.header_logo ?? ''"
-                        :alt="branding?.name ?? 'LuDa Dental'"
-                        img-class="h-12 w-auto max-w-[210px] object-contain"
+                        :alt="branding?.name ?? 'Diseñando Sonrisas'"
+                        img-class="h-24 w-auto max-w-[160px] object-contain sm:h-28"
                     />
                 </Link>
 
                 <div
-                    class="rounded-3xl border border-luda-navy/5 bg-white p-6 shadow-[0_30px_80px_-50px_rgba(0,19,48,0.55)] sm:p-8"
+                    class="rounded-3xl border border-luda-plum/5 bg-white p-6 shadow-[0_30px_80px_-50px_rgba(51,0,31,0.55)] sm:p-8"
                 >
                     <div class="space-y-2">
                         <h1
                             v-if="title"
-                            class="text-2xl font-semibold tracking-tight text-luda-navy"
+                            class="text-2xl font-semibold tracking-tight text-luda-plum"
                         >
                             {{ title }}
                         </h1>
@@ -156,7 +156,7 @@ const features = [
                 <p
                     class="mt-6 text-center text-[11px] leading-relaxed text-luda-ink/40"
                 >
-                    © {{ year }} {{ branding?.name ?? 'LuDa Dental' }} · Acceso
+                    © {{ year }} {{ branding?.name ?? 'Diseñando Sonrisas' }} · Acceso
                     exclusivo para personal autorizado.
                 </p>
             </div>

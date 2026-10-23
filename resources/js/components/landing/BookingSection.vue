@@ -113,25 +113,25 @@ function submit(): void {
 }
 
 const fieldClass =
-    'w-full rounded-xl border border-luda-navy/10 bg-white px-3.5 py-2.5 text-sm text-luda-ink shadow-sm outline-none transition placeholder:text-luda-ink/30 focus:border-luda-sky focus:ring-2 focus:ring-luda-sky/40';
+    'w-full rounded-xl border border-luda-plum/10 bg-white px-3.5 py-2.5 text-sm text-luda-ink shadow-sm outline-none transition placeholder:text-luda-ink/30 focus:border-luda-rose/40 focus:ring-2 focus:ring-luda-rose/25';
 </script>
 
 <template>
     <section id="agendar" class="relative bg-white py-20 sm:py-24">
         <div
-            class="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-luda-sky/70 to-transparent"
+            class="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-luda-blush/70 to-transparent"
             aria-hidden="true"
         ></div>
 
         <div class="mx-auto max-w-7xl px-4 sm:px-6">
             <div class="mx-auto max-w-2xl text-center">
                 <p
-                    class="text-xs font-semibold tracking-[0.28em] text-luda-blue uppercase"
+                    class="text-xs font-semibold tracking-[0.28em] text-luda-rose uppercase"
                 >
                     Agenda en línea
                 </p>
                 <h2
-                    class="mt-3 text-3xl font-semibold tracking-tight text-luda-navy sm:text-4xl"
+                    class="mt-3 text-3xl font-semibold tracking-tight text-luda-plum sm:text-4xl"
                 >
                     Reserva tu cita en menos de un minuto
                 </h2>
@@ -154,7 +154,7 @@ const fieldClass =
                 />
 
                 <div
-                    class="rounded-3xl border border-luda-navy/5 bg-luda-mist/70 p-5 shadow-[0_24px_70px_-52px_rgba(0,19,48,0.6)] sm:p-6"
+                    class="rounded-3xl border border-luda-plum/5 bg-luda-mist/70 p-5 shadow-[0_24px_70px_-52px_rgba(51,0,31,0.6)] sm:p-6"
                 >
                     <form class="space-y-4" novalidate @submit.prevent="submit">
                         <div
@@ -169,7 +169,7 @@ const fieldClass =
                             <div class="grid gap-2">
                                 <label
                                     for="paciente_nombre"
-                                    class="text-xs font-semibold text-luda-navy"
+                                    class="text-xs font-semibold text-luda-plum"
                                 >
                                     Nombre del paciente
                                 </label>
@@ -195,7 +195,7 @@ const fieldClass =
                             <div class="grid gap-2">
                                 <label
                                     for="paciente_telefono"
-                                    class="text-xs font-semibold text-luda-navy"
+                                    class="text-xs font-semibold text-luda-plum"
                                 >
                                     Teléfono
                                 </label>
@@ -225,7 +225,7 @@ const fieldClass =
                         <div class="grid gap-2">
                             <label
                                 for="paciente_email"
-                                class="text-xs font-semibold text-luda-navy"
+                                class="text-xs font-semibold text-luda-plum"
                             >
                                 Correo electrónico
                                 <span class="font-normal text-luda-ink/40">
@@ -252,7 +252,7 @@ const fieldClass =
                         <div class="grid gap-2">
                             <label
                                 for="servicio"
-                                class="text-xs font-semibold text-luda-navy"
+                                class="text-xs font-semibold text-luda-plum"
                             >
                                 Servicio
                             </label>
@@ -278,14 +278,14 @@ const fieldClass =
                                     </option>
                                 </select>
                                 <ChevronDown
-                                    class="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-luda-blue"
+                                    class="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-luda-rose"
                                 />
                             </div>
                             <InputError :message="form.errors.servicio" />
                         </div>
 
                         <div class="grid gap-2">
-                            <span class="text-xs font-semibold text-luda-navy">
+                            <span class="text-xs font-semibold text-luda-plum">
                                 Tipo de paciente
                             </span>
                             <div
@@ -302,8 +302,8 @@ const fieldClass =
                                     :class="[
                                         'flex items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-semibold transition',
                                         form.tipo_paciente === 'adulto'
-                                            ? 'border-luda-navy bg-luda-navy text-white shadow-md shadow-luda-navy/20'
-                                            : 'border-luda-navy/10 bg-white text-luda-ink/60 hover:bg-white/70',
+                                            ? 'border-luda-plum bg-luda-plum text-white shadow-md shadow-luda-plum/20'
+                                            : 'border-luda-plum/10 bg-white text-luda-ink/60 hover:bg-white/70',
                                     ]"
                                     @click="form.tipo_paciente = 'adulto'"
                                 >
@@ -317,8 +317,8 @@ const fieldClass =
                                     :class="[
                                         'flex items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-semibold transition',
                                         form.tipo_paciente === 'nino'
-                                            ? 'border-luda-navy bg-luda-navy text-white shadow-md shadow-luda-navy/20'
-                                            : 'border-luda-navy/10 bg-white text-luda-ink/60 hover:bg-white/70',
+                                            ? 'border-luda-plum bg-luda-plum text-white shadow-md shadow-luda-plum/20'
+                                            : 'border-luda-plum/10 bg-white text-luda-ink/60 hover:bg-white/70',
                                     ]"
                                     @click="form.tipo_paciente = 'nino'"
                                 >
@@ -332,7 +332,7 @@ const fieldClass =
                         <div class="grid gap-2">
                             <label
                                 for="notas"
-                                class="text-xs font-semibold text-luda-navy"
+                                class="text-xs font-semibold text-luda-plum"
                             >
                                 Notas
                                 <span class="font-normal text-luda-ink/40">
@@ -363,7 +363,7 @@ const fieldClass =
                         <button
                             type="submit"
                             :disabled="!canSubmit"
-                            class="flex w-full items-center justify-center gap-2 rounded-xl bg-luda-navy px-6 py-3.5 text-sm font-semibold text-white shadow-xl shadow-luda-navy/25 transition hover:bg-luda-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-blue/50 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-45"
+                            class="flex w-full items-center justify-center gap-2 rounded-xl bg-luda-plum px-6 py-3.5 text-sm font-semibold text-white shadow-xl shadow-luda-plum/25 transition hover:bg-luda-rose focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-rose/50 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-45"
                         >
                             <LoaderCircle
                                 v-if="form.processing"
@@ -387,7 +387,7 @@ const fieldClass =
                         <p
                             class="flex items-center justify-center gap-1.5 text-center text-[11px] text-luda-ink/45"
                         >
-                            <ShieldCheck class="size-3.5 text-luda-blue" />
+                            <ShieldCheck class="size-3.5 text-luda-rose" />
                             Tus datos se usan únicamente para gestionar tu
                             cita.
                         </p>

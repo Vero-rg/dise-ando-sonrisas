@@ -11,22 +11,22 @@ const props = withDefaults(
 );
 
 const wordmarkClass = computed(() =>
-    props.tone === 'light' ? 'text-white' : 'text-luda-navy',
+    props.tone === 'light' ? 'text-white' : 'text-luda-plum',
 );
 
 const accentClass = computed(() =>
-    props.tone === 'light' ? 'text-luda-sky' : 'text-luda-blue',
+    props.tone === 'light' ? 'text-luda-blush' : 'text-luda-rose',
 );
 
 const taglineClass = computed(() =>
-    props.tone === 'light' ? 'text-white/50' : 'text-luda-blue/70',
+    props.tone === 'light' ? 'text-white/50' : 'text-luda-rose/70',
 );
 </script>
 
 <template>
     <div class="flex items-center gap-3">
         <span
-            class="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-luda-blue to-luda-navy shadow-lg shadow-luda-navy/25 ring-1 ring-white/25"
+            class="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-luda-rose to-luda-plum shadow-lg shadow-luda-plum/25 ring-1 ring-white/25"
         >
             <svg
                 viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ const taglineClass = computed(() =>
                     wordmarkClass,
                 ]"
             >
-                LuDa<span :class="accentClass">Dental</span>
+                Diseñando<span :class="accentClass"> Sonrisas</span>
             </span>
             <span
                 :class="[
@@ -54,7 +54,7 @@ const taglineClass = computed(() =>
                     taglineClass,
                 ]"
             >
-                Clínica dental
+                Cirujana dentista
             </span>
         </span>
     </div>

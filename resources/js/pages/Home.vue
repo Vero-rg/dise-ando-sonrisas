@@ -20,6 +20,8 @@ import type {
 
 defineProps<{
     services: string[];
+    serviceImages: Record<string, string>;
+    heroImages: string[];
     weeklySlots: WeeklySlots;
     openingHours: OpeningHour[];
     occupiedSlots: OccupiedSlot[];
@@ -42,21 +44,26 @@ function selectType(type: PatientType): void {
 </script>
 
 <template>
-    <Head title="Odontología de especialidades en Zapopan">
+    <Head title="Ortodoncia y odontopediatría en Zapopan">
         <meta
             name="description"
-            content="LuDa Dental, clínica de especialidades odontológicas en Plaza Península, Zapopan. Ortodoncia, endodoncia, odontopediatría y más. Agenda tu cita en línea."
+            content="Diseñando Sonrisas, consultorio de la Dra. Adriana Gómez en Jardines del Valle, Zapopan. Odontopediatría, ortodoncia, odontología general y prótesis. Agenda tu cita en línea."
         />
-        <meta name="theme-color" content="#001330" />
+        <meta name="theme-color" content="#FF62C6" />
     </Head>
 
     <div class="min-h-screen bg-luda-mist font-sans text-luda-ink antialiased">
-        <LandingHeader :phones="clinic.phones" :branding="branding" />
+        <LandingHeader :phones="clinic.phones" />
 
         <main>
-            <HeroSection :phone="clinic.phones[0]" />
+            <HeroSection
+                :phone="clinic.phones[0]"
+                :branding="branding"
+                :hero-images="heroImages"
+            />
             <ServicesSection
                 :services="services"
+                :service-images="serviceImages"
                 @select="selectService"
             />
             <CareSection @select-type="selectType" />

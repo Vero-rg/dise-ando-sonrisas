@@ -174,7 +174,7 @@ function dayButtonClass(day: Date): string {
     const iso = toIsoDate(day);
 
     if (selectedDate.value === iso) {
-        return 'bg-luda-navy text-white shadow-lg shadow-luda-navy/25';
+        return 'bg-luda-plum text-white shadow-lg shadow-luda-plum/25';
     }
 
     if (dayStatus(day) !== 'open') {
@@ -182,22 +182,22 @@ function dayButtonClass(day: Date): string {
     }
 
     if (iso === todayIso.value) {
-        return 'bg-luda-sky/20 font-bold text-luda-navy ring-1 ring-luda-sky/70 hover:bg-luda-sky/30';
+        return 'bg-luda-blush/20 font-bold text-luda-plum ring-1 ring-luda-rose/40 hover:bg-luda-blush/30';
     }
 
-    return 'text-luda-ink/75 hover:bg-luda-mist hover:text-luda-navy';
+    return 'text-luda-ink/75 hover:bg-luda-mist hover:text-luda-plum';
 }
 
 function slotButtonClass(slot: string): string {
     if (selectedTime.value === slot) {
-        return 'border-luda-navy bg-luda-navy text-white shadow-md shadow-luda-navy/20';
+        return 'border-luda-plum bg-luda-plum text-white shadow-md shadow-luda-plum/20';
     }
 
     if (isSlotUnavailable(slot)) {
         return 'cursor-not-allowed border-transparent bg-luda-mist text-luda-ink/25 line-through';
     }
 
-    return 'border-luda-navy/10 bg-white text-luda-ink/70 hover:border-luda-sky hover:bg-luda-mist hover:text-luda-navy';
+    return 'border-luda-plum/10 bg-white text-luda-ink/70 hover:border-luda-rose/40 hover:bg-luda-mist hover:text-luda-plum';
 }
 
 function changeMonth(delta: number): void {
@@ -217,22 +217,22 @@ function changeMonth(delta: number): void {
 
 <template>
     <div
-        class="rounded-3xl border border-luda-navy/5 bg-white p-5 shadow-[0_24px_70px_-50px_rgba(0,19,48,0.55)] sm:p-6"
+        class="rounded-3xl border border-luda-plum/5 bg-white p-5 shadow-[0_24px_70px_-50px_rgba(51,0,31,0.55)] sm:p-6"
     >
         <div class="flex items-center justify-between gap-4">
             <div class="flex items-center gap-3">
                 <span
-                    class="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-luda-mist text-luda-blue"
+                    class="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-luda-mist text-luda-rose"
                 >
                     <CalendarDays class="size-5" />
                 </span>
                 <div>
                     <p
-                        class="text-[10px] font-semibold tracking-[0.22em] text-luda-blue uppercase"
+                        class="text-[10px] font-semibold tracking-[0.22em] text-luda-rose uppercase"
                     >
                         Calendario
                     </p>
-                    <p class="text-base font-semibold text-luda-navy">
+                    <p class="text-base font-semibold text-luda-plum">
                         {{ formatMonthTitle(cursor) }}
                     </p>
                 </div>
@@ -241,7 +241,7 @@ function changeMonth(delta: number): void {
             <div class="flex items-center gap-1">
                 <button
                     type="button"
-                    class="flex size-9 items-center justify-center rounded-full border border-luda-navy/10 text-luda-navy transition hover:bg-luda-mist disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-blue/30"
+                    class="flex size-9 items-center justify-center rounded-full border border-luda-plum/10 text-luda-plum transition hover:bg-luda-mist disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-rose/30"
                     :disabled="!canGoBack"
                     aria-label="Mes anterior"
                     @click="changeMonth(-1)"
@@ -250,7 +250,7 @@ function changeMonth(delta: number): void {
                 </button>
                 <button
                     type="button"
-                    class="flex size-9 items-center justify-center rounded-full border border-luda-navy/10 text-luda-navy transition hover:bg-luda-mist disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-blue/30"
+                    class="flex size-9 items-center justify-center rounded-full border border-luda-plum/10 text-luda-plum transition hover:bg-luda-mist disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-rose/30"
                     :disabled="!canGoForward"
                     aria-label="Mes siguiente"
                     @click="changeMonth(1)"
@@ -275,7 +275,7 @@ function changeMonth(delta: number): void {
                     v-else
                     type="button"
                     :class="[
-                        'flex h-10 items-center justify-center rounded-xl text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-blue/40 sm:h-11',
+                        'flex h-10 items-center justify-center rounded-xl text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-rose/40 sm:h-11',
                         dayButtonClass(day),
                     ]"
                     :disabled="isDayDisabled(day)"
@@ -292,11 +292,11 @@ function changeMonth(delta: number): void {
             class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-luda-ink/50"
         >
             <span class="flex items-center gap-1.5">
-                <span class="size-2 rounded-full bg-luda-blue"></span>
+                <span class="size-2 rounded-full bg-luda-rose"></span>
                 Disponible
             </span>
             <span class="flex items-center gap-1.5">
-                <span class="size-2 rounded-full bg-luda-sky"></span>
+                <span class="size-2 rounded-full bg-luda-blush ring-1 ring-luda-rose/40"></span>
                 Hoy
             </span>
             <span class="flex items-center gap-1.5">
@@ -305,10 +305,10 @@ function changeMonth(delta: number): void {
             </span>
         </div>
 
-        <div class="mt-6 border-t border-luda-navy/5 pt-5">
+        <div class="mt-6 border-t border-luda-plum/5 pt-5">
             <div class="flex flex-wrap items-center justify-between gap-2">
-                <p class="flex items-center gap-2 text-sm font-semibold text-luda-navy">
-                    <Clock class="size-4 text-luda-blue" />
+                <p class="flex items-center gap-2 text-sm font-semibold text-luda-plum">
+                    <Clock class="size-4 text-luda-rose" />
                     Horarios disponibles
                 </p>
                 <p
@@ -323,7 +323,7 @@ function changeMonth(delta: number): void {
                 v-if="!selectedDate"
                 class="mt-4 flex items-center gap-2 rounded-xl bg-luda-mist px-4 py-3 text-xs text-luda-ink/60"
             >
-                <Info class="size-4 shrink-0 text-luda-blue" />
+                <Info class="size-4 shrink-0 text-luda-rose" />
                 Primero elige un día disponible en el calendario.
             </div>
 
@@ -331,7 +331,7 @@ function changeMonth(delta: number): void {
                 v-else-if="availableSlots.length === 0"
                 class="mt-4 flex items-center gap-2 rounded-xl bg-luda-mist px-4 py-3 text-xs text-luda-ink/60"
             >
-                <Info class="size-4 shrink-0 text-luda-blue" />
+                <Info class="size-4 shrink-0 text-luda-rose" />
                 Este día no hay atención. Te esperamos de lunes a sábado.
             </div>
 
@@ -341,7 +341,7 @@ function changeMonth(delta: number): void {
                     :key="slot"
                     type="button"
                     :class="[
-                        'rounded-xl border px-2 py-2.5 text-center text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-blue/40',
+                        'rounded-xl border px-2 py-2.5 text-center text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-luda-rose/40',
                         slotButtonClass(slot),
                     ]"
                     :disabled="isSlotUnavailable(slot)"
@@ -360,8 +360,9 @@ function changeMonth(delta: number): void {
             </p>
 
             <p class="mt-4 text-[11px] leading-relaxed text-luda-ink/45">
-                Horario de Zapopan: lunes a viernes de 9:00 a 17:00 y sábados
-                de 9:00 a 13:00. Domingos cerrado.
+                Horario: lunes a jueves de 10:00 a 13:00 y de 16:00 a 19:00;
+                viernes de 16:00 a 19:00 y sábados de 10:00 a 13:00. Domingos
+                cerrado.
                 <span v-if="selectedDate">
                     La fecha completa es {{ formatLongDate(selectedDate) }}.
                 </span>

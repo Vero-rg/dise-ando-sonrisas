@@ -15,28 +15,27 @@ final class AppointmentSchedule
 {
     /** @var list<string> */
     public const SERVICES = [
-        'Ortodoncia',
-        'Endodoncia',
-        'Rehabilitación Oral',
-        'Blanqueamiento',
         'Odontopediatría',
-        'Cirugía Oral',
-        'Periodoncia',
+        'Ortodoncia',
+        'Odontología general',
+        'Prótesis',
     ];
 
     /**
-     * Hora de apertura y cierre por día de la semana (0 = domingo).
+     * Bloques de atención por día de la semana (0 = domingo).
      *
-     * @var array<int, array{0: int, 1: int}|null>
+     * Cada día puede tener uno o varios turnos, por ejemplo mañana y tarde.
+     *
+     * @var array<int, list<array{0: int, 1: int}>>
      */
     public const OPENING_HOURS = [
-        CarbonInterface::SUNDAY => null,
-        CarbonInterface::MONDAY => [9, 17],
-        CarbonInterface::TUESDAY => [9, 17],
-        CarbonInterface::WEDNESDAY => [9, 17],
-        CarbonInterface::THURSDAY => [9, 17],
-        CarbonInterface::FRIDAY => [9, 17],
-        CarbonInterface::SATURDAY => [9, 13],
+        CarbonInterface::SUNDAY => [],
+        CarbonInterface::MONDAY => [[10, 13], [16, 19]],
+        CarbonInterface::TUESDAY => [[10, 13], [16, 19]],
+        CarbonInterface::WEDNESDAY => [[10, 13], [16, 19]],
+        CarbonInterface::THURSDAY => [[10, 13], [16, 19]],
+        CarbonInterface::FRIDAY => [[16, 19]],
+        CarbonInterface::SATURDAY => [[10, 13]],
     ];
 
     /**
@@ -58,19 +57,15 @@ final class AppointmentSchedule
     {
         $slots = [];
 
-        foreach (self::OPENING_HOURS as $weekday => $hours) {
-            if ($hours === null) {
-                $slots[$weekday] = [];
+        foreach (self::OPENING_HOURS as $weekday => $ranges) {
+            $slots[$weekday] = array_values(array_unique(array_merge(
+                ...array_map(
+                    static fn (array $range): array => self::hoursIn($range),
+                    $ranges,
+                ),
+            )));
 
-                continue;
-            }
-
-            [$opens, $closes] = $hours;
-
-            $slots[$weekday] = array_map(
-                static fn (int $hour): string => sprintf('%02d:00', $hour),
-                range($opens, $closes),
-            );
+            sort($slots[$weekday]);
         }
 
         return $slots;
@@ -83,13 +78,14 @@ final class AppointmentSchedule
      */
     public static function openingHours(): array
     {
-        $weekdays = self::weeklySlots();
-        $weekdayHours = self::formatRange($weekdays[CarbonInterface::MONDAY] ?? []);
-        $saturdayHours = self::formatRange($weekdays[CarbonInterface::SATURDAY] ?? []);
+        $weekdays = self::formatDay(CarbonInterface::MONDAY);
+        $friday = self::formatDay(CarbonInterface::FRIDAY);
+        $saturday = self::formatDay(CarbonInterface::SATURDAY);
 
         return [
-            ['days' => 'Lunes a Viernes', 'time' => $weekdayHours, 'open' => $weekdayHours !== 'Cerrado'],
-            ['days' => 'Sábados', 'time' => $saturdayHours, 'open' => $saturdayHours !== 'Cerrado'],
+            ['days' => 'Lunes a Jueves', 'time' => $weekdays, 'open' => $weekdays !== 'Cerrado'],
+            ['days' => 'Viernes', 'time' => $friday, 'open' => $friday !== 'Cerrado'],
+            ['days' => 'Sábados', 'time' => $saturday, 'open' => $saturday !== 'Cerrado'],
             ['days' => 'Domingos', 'time' => 'Cerrado', 'open' => false],
         ];
     }
@@ -105,17 +101,33 @@ final class AppointmentSchedule
     }
 
     /**
-     * @param  list<string>  $slots
+     * @param  array{0: int, 1: int}  $range
+     * @return list<string>
      */
-    private static function formatRange(array $slots): string
+    private static function hoursIn(array $range): array
     {
-        if ($slots === []) {
+        [$opens, $closes] = $range;
+
+        return array_map(
+            static fn (int $hour): string => sprintf('%02d:00', $hour),
+            range($opens, $closes),
+        );
+    }
+
+    /**
+     * Horario de un día con sus turnos, listo para mostrar.
+     */
+    private static function formatDay(int $weekday): string
+    {
+        $ranges = self::OPENING_HOURS[$weekday] ?? [];
+
+        if ($ranges === []) {
             return 'Cerrado';
         }
 
-        $opens = ltrim(explode(':', $slots[0])[0], '0');
-        $closes = ltrim(explode(':', $slots[count($slots) - 1])[0], '0');
-
-        return sprintf('%s:00 - %s:00', $opens, $closes);
+        return implode(' / ', array_map(
+            static fn (array $range): string => sprintf('%02d:00 - %02d:00', $range[0], $range[1]),
+            $ranges,
+        ));
     }
 }
