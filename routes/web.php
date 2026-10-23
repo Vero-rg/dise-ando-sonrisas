@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
+use App\Http\Controllers\Admin\HeroImageController as AdminHeroImageController;
+use App\Http\Controllers\Admin\ServiceImageController as AdminServiceImageController;
 use App\Http\Controllers\Admin\TreatmentResultController as AdminTreatmentResultController;
 use App\Http\Controllers\AppointmentController;
 use Illuminate\Support\Facades\Artisan;
@@ -40,11 +42,30 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::delete('resultados/{result}', [AdminTreatmentResultController::class, 'destroy'])
             ->name('resultados.destroy');
+
+        Route::get('servicios', [AdminServiceImageController::class, 'index'])
+            ->name('servicios.index');
+
+        Route::post('servicios', [AdminServiceImageController::class, 'store'])
+            ->name('servicios.store');
+
+        Route::delete('servicios', [AdminServiceImageController::class, 'destroy'])
+            ->name('servicios.destroy');
+
+        Route::get('portada', [AdminHeroImageController::class, 'index'])
+            ->name('portada.index');
+
+        Route::post('portada', [AdminHeroImageController::class, 'store'])
+            ->name('portada.store');
+
+        Route::delete('portada/{heroImage}', [AdminHeroImageController::class, 'destroy'])
+            ->name('portada.destroy');
     });
 });
 
 Route::get('/clear-all', function () {
     Artisan::call('storage:link');
+
     return 'linked';
 });
 

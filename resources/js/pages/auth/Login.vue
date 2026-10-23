@@ -16,7 +16,7 @@ defineOptions({
     layout: {
         title: 'Bienvenido de nuevo',
         description:
-            'Ingresa tus credenciales para acceder al panel de LuDa Dental.',
+            'Ingresa tus credenciales para acceder al panel de Diseñando Sonrisas.',
     },
 });
 
@@ -26,7 +26,7 @@ defineProps<{
 }>();
 
 const fieldClass =
-    'h-11 rounded-xl border-luda-navy/10 bg-luda-mist/50 px-3.5 text-sm text-luda-ink shadow-none placeholder:text-luda-ink/30 focus-visible:border-luda-sky focus-visible:ring-luda-sky/40';
+    'h-11 rounded-xl border-luda-plum/10 bg-luda-mist/50 px-3.5 text-sm text-luda-ink shadow-none placeholder:text-luda-ink/30 focus-visible:border-luda-rose/40 focus-visible:ring-luda-rose/25';
 </script>
 
 <template>
@@ -47,7 +47,7 @@ const fieldClass =
     >
         <div class="grid gap-5">
             <div class="grid gap-2">
-                <Label for="email" class="text-xs font-semibold text-luda-navy">
+                <Label for="email" class="text-xs font-semibold text-luda-plum">
                     Correo electrónico
                 </Label>
                 <Input
@@ -68,7 +68,7 @@ const fieldClass =
                 <div class="flex items-center justify-between gap-3">
                     <Label
                         for="password"
-                        class="text-xs font-semibold text-luda-navy"
+                        class="text-xs font-semibold text-luda-plum"
                     >
                         Contraseña
                     </Label>
@@ -102,7 +102,7 @@ const fieldClass =
                         id="remember"
                         name="remember"
                         :tabindex="3"
-                        class="size-4 rounded border-luda-navy/20"
+                        class="size-4 rounded border-luda-plum/20"
                     />
                     <span>Recordarme</span>
                 </Label>
@@ -110,7 +110,7 @@ const fieldClass =
 
             <Button
                 type="submit"
-                class="mt-1 h-11 w-full rounded-xl bg-luda-navy text-sm font-semibold text-white shadow-lg shadow-luda-navy/20 transition hover:bg-luda-blue disabled:opacity-60"
+                class="mt-1 h-11 w-full rounded-xl bg-luda-plum text-sm font-semibold text-white shadow-lg shadow-luda-plum/20 transition hover:bg-luda-rose disabled:opacity-60"
                 :tabindex="4"
                 :disabled="processing"
                 data-test="login-button"

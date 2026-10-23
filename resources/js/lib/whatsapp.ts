@@ -1,7 +1,7 @@
 import type { AppointmentRecord, ClinicInfo } from '@/types';
 import { formatLongDate, formatPhone } from './appointments';
 
-const CLINIC_NAME = 'LuDa Dental';
+const CLINIC_NAME = 'Diseñando Sonrisas';
 
 export function normalizeWhatsAppNumber(phone: string): string {
     const digits = phone.replace(/\D/g, '');

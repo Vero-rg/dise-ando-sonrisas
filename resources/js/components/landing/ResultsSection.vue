@@ -11,11 +11,11 @@ defineProps<{
 <template>
     <section id="resultados" class="relative overflow-hidden bg-luda-mist py-20 sm:py-24">
         <div
-            class="pointer-events-none absolute -top-24 right-0 size-72 rounded-full bg-luda-sky/20 blur-3xl"
+            class="pointer-events-none absolute -top-24 right-0 size-72 rounded-full bg-luda-blush/20 blur-3xl"
             aria-hidden="true"
         ></div>
         <div
-            class="pointer-events-none absolute bottom-0 -left-24 size-72 rounded-full bg-luda-blue/10 blur-3xl"
+            class="pointer-events-none absolute bottom-0 -left-24 size-72 rounded-full bg-luda-rose/10 blur-3xl"
             aria-hidden="true"
         ></div>
 
@@ -25,26 +25,26 @@ defineProps<{
             >
                 <div class="max-w-2xl">
                     <p
-                        class="inline-flex items-center gap-2 rounded-full border border-luda-blue/15 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.18em] text-luda-blue uppercase shadow-sm backdrop-blur"
+                        class="inline-flex items-center gap-2 rounded-full border border-luda-rose/15 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.18em] text-luda-rose uppercase shadow-sm backdrop-blur"
                     >
                         <Sparkles class="size-3.5" />
                         Antes y después
                     </p>
                     <h2
-                        class="mt-4 text-3xl font-semibold tracking-tight text-luda-navy sm:text-4xl"
+                        class="mt-4 text-3xl font-semibold tracking-tight text-luda-plum sm:text-4xl"
                     >
                         Resultados que hablan por sí solos
                     </h2>
                     <p class="mt-4 text-base leading-relaxed text-luda-ink/65">
-                        Conoce algunos de los trabajos que realizamos en LuDa
-                        Dental. Desliza cada imagen para comparar el antes y el
-                        después de nuestros tratamientos.
+                        Conoce algunos de los trabajos que realizamos en
+                        Diseñando Sonrisas. Desliza cada imagen para comparar el
+                        antes y el después de nuestros tratamientos.
                     </p>
                 </div>
 
                 <a
                     href="#agendar"
-                    class="group inline-flex w-fit items-center gap-2 rounded-full bg-luda-navy px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-luda-navy/20 transition hover:bg-luda-blue"
+                    class="group inline-flex w-fit items-center gap-2 rounded-full bg-luda-plum px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-luda-plum/20 transition hover:bg-luda-rose"
                 >
                     Quiero mi valoración
                     <ArrowRight
@@ -57,7 +57,7 @@ defineProps<{
                 <article
                     v-for="result in results"
                     :key="result.id"
-                    class="group overflow-hidden rounded-3xl border border-luda-navy/5 bg-white shadow-[0_24px_70px_-52px_rgba(0,19,48,0.5)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-40px_rgba(17,91,138,0.35)]"
+                    class="group overflow-hidden rounded-3xl border border-luda-plum/5 bg-white shadow-[0_24px_70px_-52px_rgba(51,0,31,0.5)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-40px_rgba(227,2,145,0.35)]"
                 >
                     <BeforeAfterSlider
                         :before="result.imagen_antes"
@@ -68,11 +68,11 @@ defineProps<{
                     <div class="p-5">
                         <span
                             v-if="result.servicio"
-                            class="inline-flex rounded-full bg-luda-sky/20 px-2.5 py-1 text-[10px] font-semibold tracking-[0.12em] text-luda-blue uppercase"
+                            class="inline-flex rounded-full bg-luda-blush/20 px-2.5 py-1 text-[10px] font-semibold tracking-[0.12em] text-luda-rose uppercase"
                         >
                             {{ result.servicio }}
                         </span>
-                        <h3 class="mt-2 text-lg font-semibold text-luda-navy">
+                        <h3 class="mt-2 text-lg font-semibold text-luda-plum">
                             {{ result.titulo }}
                         </h3>
                         <p class="mt-2 text-sm leading-relaxed text-luda-ink/60">

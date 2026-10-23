@@ -19,9 +19,9 @@ const childBenefits = [
 ];
 
 const adultBenefits = [
-    'Ortodoncia estética y alineadores',
-    'Rehabilitación oral e implantes',
-    'Blanqueamiento y diseño de sonrisa',
+    'Ortodoncia con brackets y alineadores',
+    'Prótesis fijas, removibles y coronas',
+    'Odontología general y limpiezas',
 ];
 </script>
 
@@ -30,12 +30,12 @@ const adultBenefits = [
         <div class="mx-auto max-w-7xl px-4 sm:px-6">
             <div class="mx-auto max-w-2xl text-center">
                 <p
-                    class="text-xs font-semibold tracking-[0.28em] text-luda-blue uppercase"
+                    class="text-xs font-semibold tracking-[0.28em] text-luda-rose uppercase"
                 >
                     Atención personalizada
                 </p>
                 <h2
-                    class="mt-3 text-3xl font-semibold tracking-tight text-luda-navy sm:text-4xl"
+                    class="mt-3 text-3xl font-semibold tracking-tight text-luda-plum sm:text-4xl"
                 >
                     Un espacio para cada etapa de tu sonrisa
                 </h2>
@@ -47,27 +47,27 @@ const adultBenefits = [
 
             <div class="mt-12 grid gap-6 lg:grid-cols-2">
                 <article
-                    class="group relative overflow-hidden rounded-[2rem] border border-luda-sky/30 bg-linear-to-br from-white via-luda-mist to-[#e6f1f6] p-7 shadow-[0_24px_70px_-50px_rgba(0,19,48,0.5)] sm:p-9"
+                    class="group relative overflow-hidden rounded-[2rem] border border-luda-blush/30 bg-linear-to-br from-white via-luda-mist to-[#f8e3ec] p-7 shadow-[0_24px_70px_-50px_rgba(51,0,31,0.5)] sm:p-9"
                 >
                     <div
-                        class="absolute -top-20 -right-16 size-56 rounded-full bg-luda-sky/25 blur-3xl transition group-hover:bg-luda-sky/35"
+                        class="absolute -top-20 -right-16 size-56 rounded-full bg-luda-blush/25 blur-3xl transition group-hover:bg-luda-blush/35"
                         aria-hidden="true"
                     ></div>
 
                     <div class="relative flex items-center gap-3">
                         <span
-                            class="flex size-14 items-center justify-center rounded-2xl bg-white text-luda-blue shadow-sm ring-1 ring-luda-navy/5"
+                            class="flex size-14 items-center justify-center rounded-2xl bg-white text-luda-rose shadow-sm ring-1 ring-luda-plum/5"
                         >
                             <Baby class="size-7" />
                         </span>
                         <span
-                            class="rounded-full bg-luda-blue/10 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-luda-blue uppercase"
+                            class="rounded-full bg-luda-rose/10 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-luda-rose uppercase"
                         >
                             Para niños
                         </span>
                     </div>
 
-                    <h3 class="relative mt-6 text-2xl font-semibold text-luda-navy">
+                    <h3 class="relative mt-6 text-2xl font-semibold text-luda-plum">
                         Odontopediatría con paciencia y juego
                     </h3>
                     <p class="relative mt-3 text-sm leading-relaxed text-luda-ink/65">
@@ -83,7 +83,7 @@ const adultBenefits = [
                             class="flex items-start gap-3 text-sm text-luda-ink/75"
                         >
                             <span
-                                class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-luda-blue/10 text-luda-blue"
+                                class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-luda-rose/10 text-luda-rose"
                             >
                                 <Check class="size-3.5" />
                             </span>
@@ -93,7 +93,7 @@ const adultBenefits = [
 
                     <a
                         href="#agendar"
-                        class="relative mt-8 inline-flex items-center gap-2 rounded-full bg-luda-navy px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-luda-navy/20 transition hover:bg-luda-blue"
+                        class="relative mt-8 inline-flex items-center gap-2 rounded-full bg-luda-plum px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-luda-plum/20 transition hover:bg-luda-rose"
                         @click="emit('select-type', 'nino')"
                     >
                         Agendar cita para mi hijo
@@ -102,10 +102,10 @@ const adultBenefits = [
                 </article>
 
                 <article
-                    class="group relative overflow-hidden rounded-[2rem] bg-linear-to-br from-luda-navy via-[#021b3a] to-luda-blue p-7 text-white shadow-2xl shadow-luda-navy/25 sm:p-9"
+                    class="group relative overflow-hidden rounded-[2rem] bg-linear-to-br from-luda-plum via-[#7a0d4f] to-luda-rose p-7 text-white shadow-2xl shadow-luda-plum/25 sm:p-9"
                 >
                     <div
-                        class="absolute -top-24 -right-20 size-64 rounded-full bg-luda-sky/20 blur-3xl"
+                        class="absolute -top-24 -right-20 size-64 rounded-full bg-luda-blush/20 blur-3xl"
                         aria-hidden="true"
                     ></div>
                     <div
@@ -115,12 +115,12 @@ const adultBenefits = [
 
                     <div class="relative flex items-center gap-3">
                         <span
-                            class="flex size-14 items-center justify-center rounded-2xl bg-white/10 text-luda-sky ring-1 ring-white/15"
+                            class="flex size-14 items-center justify-center rounded-2xl bg-white/10 text-luda-blush ring-1 ring-white/15"
                         >
                             <UserRound class="size-7" />
                         </span>
                         <span
-                            class="rounded-full bg-white/10 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-luda-sky uppercase ring-1 ring-white/15"
+                            class="rounded-full bg-white/10 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] text-luda-blush uppercase ring-1 ring-white/15"
                         >
                             Para adultos
                         </span>
@@ -141,7 +141,7 @@ const adultBenefits = [
                             class="flex items-start gap-3 text-sm text-white/80"
                         >
                             <span
-                                class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-white/10 text-luda-sky"
+                                class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-white/10 text-luda-blush"
                             >
                                 <Check class="size-3.5" />
                             </span>
@@ -154,15 +154,15 @@ const adultBenefits = [
                     >
                         <a
                             href="#agendar"
-                            class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-luda-navy shadow-lg shadow-black/20 transition hover:bg-luda-sky"
+                            class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-luda-plum shadow-lg shadow-black/20 transition hover:bg-luda-blush"
                             @click="emit('select-type', 'adulto')"
                         >
                             Agendar mi valoración
                             <ArrowRight class="size-4" />
                         </a>
                         <span class="flex items-center gap-1.5 text-xs text-white/50">
-                            <Smile class="size-4 text-luda-sky" />
-                            <Sparkles class="size-4 text-luda-sky" />
+                            <Smile class="size-4 text-luda-blush" />
+                            <Sparkles class="size-4 text-luda-blush" />
                             Sonrisas que se notan
                         </span>
                     </div>

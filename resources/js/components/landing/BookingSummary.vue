@@ -49,9 +49,9 @@ const completo = computed(
 </script>
 
 <template>
-    <div class="rounded-2xl border border-luda-sky/40 bg-white/90 p-5">
+    <div class="rounded-2xl border border-luda-blush/40 bg-white/90 p-5">
         <div class="flex items-center justify-between gap-3">
-            <p class="text-sm font-semibold text-luda-navy">
+            <p class="text-sm font-semibold text-luda-plum">
                 Resumen de tu cita
             </p>
             <span
@@ -59,7 +59,7 @@ const completo = computed(
                     'rounded-full px-2.5 py-1 text-[10px] font-semibold tracking-[0.16em] uppercase',
                     completo
                         ? 'bg-emerald-50 text-emerald-700'
-                        : 'bg-luda-sky/20 text-luda-blue',
+                        : 'bg-luda-blush/20 text-luda-rose',
                 ]"
             >
                 {{ completo ? 'Listo' : 'En vivo' }}
@@ -68,60 +68,60 @@ const completo = computed(
 
         <dl class="mt-4 space-y-3 text-sm">
             <div class="flex items-start gap-3">
-                <Stethoscope class="mt-0.5 size-4 shrink-0 text-luda-blue" />
+                <Stethoscope class="mt-0.5 size-4 shrink-0 text-luda-rose" />
                 <div class="min-w-0 flex-1">
                     <dt class="text-[11px] text-luda-ink/45">Servicio</dt>
-                    <dd class="truncate font-medium text-luda-navy">
+                    <dd class="truncate font-medium text-luda-plum">
                         {{ servicio || 'Por elegir' }}
                     </dd>
                 </div>
             </div>
 
             <div class="flex items-start gap-3">
-                <CalendarDays class="mt-0.5 size-4 shrink-0 text-luda-blue" />
+                <CalendarDays class="mt-0.5 size-4 shrink-0 text-luda-rose" />
                 <div class="min-w-0 flex-1">
                     <dt class="text-[11px] text-luda-ink/45">Fecha</dt>
-                    <dd class="font-medium capitalize text-luda-navy">
+                    <dd class="font-medium capitalize text-luda-plum">
                         {{ fechaLabel }}
                     </dd>
                 </div>
             </div>
 
             <div class="flex items-start gap-3">
-                <Clock class="mt-0.5 size-4 shrink-0 text-luda-blue" />
+                <Clock class="mt-0.5 size-4 shrink-0 text-luda-rose" />
                 <div class="min-w-0 flex-1">
                     <dt class="text-[11px] text-luda-ink/45">Hora</dt>
-                    <dd class="font-medium text-luda-navy">
+                    <dd class="font-medium text-luda-plum">
                         {{ hora ? `${hora} hrs` : 'Por elegir' }}
                     </dd>
                 </div>
             </div>
 
             <div class="flex items-start gap-3">
-                <UserRound class="mt-0.5 size-4 shrink-0 text-luda-blue" />
+                <UserRound class="mt-0.5 size-4 shrink-0 text-luda-rose" />
                 <div class="min-w-0 flex-1">
                     <dt class="text-[11px] text-luda-ink/45">Paciente</dt>
-                    <dd class="truncate font-medium text-luda-navy">
+                    <dd class="truncate font-medium text-luda-plum">
                         {{ pacienteLabel }}
                     </dd>
                 </div>
             </div>
 
             <div class="flex items-start gap-3">
-                <Phone class="mt-0.5 size-4 shrink-0 text-luda-blue" />
+                <Phone class="mt-0.5 size-4 shrink-0 text-luda-rose" />
                 <div class="min-w-0 flex-1">
                     <dt class="text-[11px] text-luda-ink/45">Teléfono</dt>
-                    <dd class="font-medium text-luda-navy">
+                    <dd class="font-medium text-luda-plum">
                         {{ telefonoLabel }}
                     </dd>
                 </div>
             </div>
 
             <div class="flex items-start gap-3">
-                <Baby class="mt-0.5 size-4 shrink-0 text-luda-blue" />
+                <Baby class="mt-0.5 size-4 shrink-0 text-luda-rose" />
                 <div class="min-w-0 flex-1">
                     <dt class="text-[11px] text-luda-ink/45">Tipo de cita</dt>
-                    <dd class="font-medium text-luda-navy">{{ tipoLabel }}</dd>
+                    <dd class="font-medium text-luda-plum">{{ tipoLabel }}</dd>
                 </div>
             </div>
         </dl>
@@ -129,7 +129,7 @@ const completo = computed(
         <p
             class="mt-4 rounded-xl bg-luda-mist px-3 py-2 text-[11px] leading-relaxed text-luda-ink/55"
         >
-            Tu cita queda como <strong class="text-luda-navy">pendiente</strong>
+            Tu cita queda como <strong class="text-luda-plum">pendiente</strong>
             hasta que la confirmes por WhatsApp con tu folio.
         </p>
     </div>

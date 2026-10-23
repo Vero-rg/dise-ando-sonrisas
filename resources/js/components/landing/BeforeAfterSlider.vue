@@ -42,13 +42,13 @@ const position = ref(50);
         </div>
 
         <div
-            class="pointer-events-none absolute inset-y-0 z-10 w-0.5 -translate-x-1/2 bg-white/90 shadow-[0_0_14px_rgba(0,19,48,0.5)]"
+            class="pointer-events-none absolute inset-y-0 z-10 w-0.5 -translate-x-1/2 bg-white/90 shadow-[0_0_14px_rgba(51,0,31,0.5)]"
             :style="{ left: `${position}%` }"
             aria-hidden="true"
         ></div>
 
         <span
-            class="pointer-events-none absolute top-1/2 z-10 flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/95 text-luda-navy shadow-lg"
+            class="pointer-events-none absolute top-1/2 z-10 flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/95 text-luda-plum shadow-lg"
             :style="{ left: `${position}%` }"
             aria-hidden="true"
         >
@@ -56,12 +56,12 @@ const position = ref(50);
         </span>
 
         <span
-            class="pointer-events-none absolute top-3 left-3 z-10 rounded-full bg-luda-navy/85 px-2.5 py-1 text-[10px] font-semibold tracking-[0.14em] text-white uppercase backdrop-blur"
+            class="pointer-events-none absolute top-3 left-3 z-10 rounded-full bg-luda-plum/85 px-2.5 py-1 text-[10px] font-semibold tracking-[0.14em] text-white uppercase backdrop-blur"
         >
             Antes
         </span>
         <span
-            class="pointer-events-none absolute top-3 right-3 z-10 rounded-full bg-luda-blue/90 px-2.5 py-1 text-[10px] font-semibold tracking-[0.14em] text-white uppercase backdrop-blur"
+            class="pointer-events-none absolute top-3 right-3 z-10 rounded-full bg-luda-rose/90 px-2.5 py-1 text-[10px] font-semibold tracking-[0.14em] text-white uppercase backdrop-blur"
         >
             Después
         </span>

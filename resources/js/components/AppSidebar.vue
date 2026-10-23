@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
-import { CalendarCheck, Images } from '@lucide/vue';
+import { CalendarCheck, Image, Images, Stethoscope } from '@lucide/vue';
 import { computed } from 'vue';
 import AppLogo from '@/components/AppLogo.vue';
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
@@ -28,6 +28,16 @@ const mainNavItems: NavItem[] = [
         href: '/admin/resultados',
         icon: Images,
     },
+    {
+        title: 'Servicios',
+        href: '/admin/servicios',
+        icon: Stethoscope,
+    },
+    {
+        title: 'Portada',
+        href: '/admin/portada',
+        icon: Image,
+    },
 ];
 
 const page = usePage();
@@ -45,11 +55,11 @@ const headerLogo = computed(() => page.props.branding?.header_logo ?? '');
             >
                 <img
                     :src="headerLogo"
-                    :alt="page.props.branding?.name ?? 'LuDa Dental'"
-                    class="h-auto max-h-24 w-full object-contain group-data-[collapsible=icon]:hidden"
+                    :alt="page.props.branding?.name ?? 'Diseñando Sonrisas'"
+                    class="mx-auto h-20 w-auto max-w-[110px] object-contain group-data-[collapsible=icon]:hidden"
                 />
                 <AppLogoIcon
-                    class="hidden size-7 fill-current text-luda-navy group-data-[collapsible=icon]:block"
+                    class="hidden size-7 fill-current text-luda-plum group-data-[collapsible=icon]:block"
                 />
             </Link>
 

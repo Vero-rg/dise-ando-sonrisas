@@ -7,23 +7,23 @@ withDefaults(
         value: number;
         hint: string;
         icon: LucideIcon;
-        tone?: 'navy' | 'blue' | 'sky';
+        tone?: 'plum' | 'rose' | 'blush';
     }>(),
     {
-        tone: 'blue',
+        tone: 'rose',
     },
 );
 
-const toneClasses: Record<'navy' | 'blue' | 'sky', string> = {
-    navy: 'bg-luda-navy text-white',
-    blue: 'bg-luda-blue text-white',
-    sky: 'bg-luda-sky/25 text-luda-blue',
+const toneClasses: Record<'plum' | 'rose' | 'blush', string> = {
+    plum: 'bg-luda-plum text-white',
+    rose: 'bg-luda-rose text-white',
+    blush: 'bg-luda-blush/25 text-luda-rose',
 };
 </script>
 
 <template>
     <div
-        class="relative overflow-hidden rounded-2xl border border-luda-navy/5 bg-white p-5 shadow-[0_18px_45px_-36px_rgba(0,19,48,0.5)]"
+        class="relative overflow-hidden rounded-2xl border border-luda-plum/5 bg-white p-5 shadow-[0_18px_45px_-36px_rgba(51,0,31,0.5)]"
     >
         <div
             class="absolute -top-10 -right-8 size-24 rounded-full bg-luda-mist"
@@ -36,7 +36,7 @@ const toneClasses: Record<'navy' | 'blue' | 'sky', string> = {
                 >
                     {{ label }}
                 </p>
-                <p class="mt-3 text-3xl font-semibold text-luda-navy">
+                <p class="mt-3 text-3xl font-semibold text-luda-plum">
                     {{ value }}
                 </p>
                 <p class="mt-1 text-xs text-luda-ink/50">{{ hint }}</p>
