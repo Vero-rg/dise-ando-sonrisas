@@ -29,13 +29,13 @@ const whatsappUrl = computed(() =>
 </script>
 
 <template>
-    <footer id="contacto" class="relative overflow-hidden bg-luda-navy text-white">
+    <footer id="contacto" class="relative overflow-hidden bg-luda-plum text-white">
         <div
-            class="pointer-events-none absolute -top-32 right-0 size-96 rounded-full bg-luda-blue/30 blur-3xl"
+            class="pointer-events-none absolute -top-32 right-0 size-96 rounded-full bg-luda-rose/30 blur-3xl"
             aria-hidden="true"
         ></div>
         <div
-            class="pointer-events-none absolute -bottom-40 left-0 size-96 rounded-full bg-luda-sky/10 blur-3xl"
+            class="pointer-events-none absolute -bottom-40 left-0 size-96 rounded-full bg-luda-blush/10 blur-3xl"
             aria-hidden="true"
         ></div>
 
@@ -44,30 +44,39 @@ const whatsappUrl = computed(() =>
                 <div>
                     <Link
                         href="/login"
-                        class="inline-flex rounded-xl outline-none transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-luda-sky/60"
+                        class="inline-flex rounded-xl outline-none transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-luda-blush/60"
                         aria-label="Ir al inicio de sesión"
                     >
                         <BrandLogo
                             :src="branding.footer_logo"
                             :alt="branding.name"
                             tone="light"
-                            img-class="h-14 w-auto max-w-[240px] object-contain"
+                            img-class="h-24 w-auto max-w-[140px] object-contain sm:h-28"
                         />
                     </Link>
                     <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
-                        Especialidades odontológicas para toda la familia en
-                        Zapopan. Tecnología, calidez y un equipo que cuida cada
-                        detalle de tu sonrisa.
+                        Odontopediatría, ortodoncia, odontología general y
+                        prótesis para toda la familia en Jardines del Valle,
+                        Zapopan.
                     </p>
+
+                    <div class="mt-4">
+                        <p class="text-sm font-semibold text-luda-blush">
+                            {{ clinic.dentist.name }}
+                        </p>
+                        <p class="text-[11px] text-white/45">
+                            {{ clinic.dentist.credentials }}
+                        </p>
+                    </div>
 
                     <div class="mt-6 flex flex-wrap gap-2">
                         <a
                             v-for="phone in clinic.phones"
                             :key="phone.number"
                             :href="`tel:+52${phone.number}`"
-                            class="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white/80 transition hover:border-luda-sky/50 hover:bg-white/10 hover:text-white"
+                            class="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white/80 transition hover:border-luda-blush/50 hover:bg-white/10 hover:text-white"
                         >
-                            <Phone class="size-4 text-luda-sky" />
+                            <Phone class="size-4 text-luda-blush" />
                             {{ phone.label }}
                         </a>
                     </div>
@@ -85,7 +94,7 @@ const whatsappUrl = computed(() =>
 
                 <div>
                     <h3
-                        class="flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-luda-sky uppercase"
+                        class="flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-luda-blush uppercase"
                     >
                         <Clock class="size-4" />
                         Horarios
@@ -115,7 +124,7 @@ const whatsappUrl = computed(() =>
 
                 <div>
                     <h3
-                        class="flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-luda-sky uppercase"
+                        class="flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-luda-blush uppercase"
                     >
                         <MapPin class="size-4" />
                         Ubicación
@@ -134,7 +143,7 @@ const whatsappUrl = computed(() =>
                         :href="clinic.map.link"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-luda-sky transition hover:text-white"
+                        class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-luda-blush transition hover:text-white"
                     >
                         Cómo llegar
                         <ArrowUpRight class="size-4" />
@@ -145,7 +154,7 @@ const whatsappUrl = computed(() =>
                     >
                         <iframe
                             :src="clinic.map.embed_url"
-                            title="Ubicación de LuDa Dental en Plaza Península, Zapopan"
+                            title="Ubicación de Diseñando Sonrisas en Jardines del Valle, Zapopan"
                             class="h-44 w-full"
                             style="border: 0"
                             loading="lazy"

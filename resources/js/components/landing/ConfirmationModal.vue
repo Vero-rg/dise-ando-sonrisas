@@ -49,16 +49,16 @@ const whatsappUrl = computed(() => {
         >
             <div
                 v-if="appointment"
-                class="relative overflow-hidden bg-linear-to-br from-luda-navy via-[#03244a] to-luda-blue px-6 pt-9 pb-8 text-center text-white"
+                class="relative overflow-hidden bg-linear-to-br from-luda-plum via-[#7a0d4f] to-luda-rose px-6 pt-9 pb-8 text-center text-white"
             >
                 <div
-                    class="absolute -top-16 -right-10 size-40 rounded-full bg-luda-sky/20 blur-2xl"
+                    class="absolute -top-16 -right-10 size-40 rounded-full bg-luda-blush/20 blur-2xl"
                     aria-hidden="true"
                 ></div>
                 <span
                     class="relative mx-auto flex size-14 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20"
                 >
-                    <Check class="size-7 text-luda-sky" />
+                    <Check class="size-7 text-luda-blush" />
                 </span>
                 <DialogTitle class="relative mt-4 text-xl font-semibold">
                     ¡Tu cita está registrada!
@@ -67,7 +67,7 @@ const whatsappUrl = computed(() => {
                     Guarda tu folio, lo necesitarás para confirmar.
                 </DialogDescription>
                 <p
-                    class="relative mt-4 font-mono text-2xl font-bold tracking-[0.18em] text-luda-sky"
+                    class="relative mt-4 font-mono text-2xl font-bold tracking-[0.18em] text-luda-blush"
                 >
                     {{ appointment.codigo_folio }}
                 </p>
@@ -77,33 +77,33 @@ const whatsappUrl = computed(() => {
                 <dl class="space-y-3 text-sm">
                     <div class="flex items-start justify-between gap-4">
                         <dt class="text-luda-ink/50">Paciente</dt>
-                        <dd class="text-right font-medium text-luda-navy">
+                        <dd class="text-right font-medium text-luda-plum">
                             {{ appointment.paciente_nombre }}
                         </dd>
                     </div>
                     <div class="flex items-start justify-between gap-4">
                         <dt class="text-luda-ink/50">Servicio</dt>
-                        <dd class="text-right font-medium text-luda-navy">
+                        <dd class="text-right font-medium text-luda-plum">
                             {{ appointment.servicio }}
                         </dd>
                     </div>
                     <div class="flex items-start justify-between gap-4">
                         <dt class="text-luda-ink/50">Fecha</dt>
                         <dd
-                            class="text-right font-medium text-luda-navy capitalize"
+                            class="text-right font-medium text-luda-plum capitalize"
                         >
                             {{ formatLongDate(appointment.fecha) }}
                         </dd>
                     </div>
                     <div class="flex items-start justify-between gap-4">
                         <dt class="text-luda-ink/50">Hora</dt>
-                        <dd class="text-right font-medium text-luda-navy">
+                        <dd class="text-right font-medium text-luda-plum">
                             {{ appointment.hora }} hrs
                         </dd>
                     </div>
                     <div class="flex items-start justify-between gap-4">
                         <dt class="text-luda-ink/50">Teléfono</dt>
-                        <dd class="text-right font-medium text-luda-navy">
+                        <dd class="text-right font-medium text-luda-plum">
                             {{ formatPhone(appointment.paciente_telefono) }}
                         </dd>
                     </div>
@@ -132,7 +132,7 @@ const whatsappUrl = computed(() => {
 
                 <button
                     type="button"
-                    class="mt-3 w-full rounded-xl border border-luda-navy/10 px-5 py-3 text-sm font-semibold text-luda-navy transition hover:bg-luda-mist"
+                    class="mt-3 w-full rounded-xl border border-luda-plum/10 px-5 py-3 text-sm font-semibold text-luda-plum transition hover:bg-luda-mist"
                     @click="emit('close')"
                 >
                     Cerrar

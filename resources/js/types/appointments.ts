@@ -49,6 +49,10 @@ export type ClinicPhone = {
 export type ClinicInfo = {
     name: string;
     tagline: string;
+    dentist: {
+        name: string;
+        credentials: string;
+    };
     timezone: string;
     whatsapp: string;
     phones: ClinicPhone[];

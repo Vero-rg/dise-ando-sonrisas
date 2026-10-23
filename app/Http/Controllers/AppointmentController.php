@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAppointmentRequest;
 use App\Models\Appointment;
+use App\Models\HeroImage;
+use App\Models\ServiceImage;
 use App\Models\TreatmentResult;
 use App\Support\AppointmentSchedule;
 use Illuminate\Http\JsonResponse;
@@ -22,6 +24,8 @@ class AppointmentController extends Controller
 
         return Inertia::render('Home', [
             'services' => AppointmentSchedule::SERVICES,
+            'serviceImages' => ServiceImage::urls(),
+            'heroImages' => HeroImage::urls(),
             'weeklySlots' => AppointmentSchedule::weeklySlots(),
             'openingHours' => AppointmentSchedule::openingHours(),
             'occupiedSlots' => Appointment::occupiedSlots(

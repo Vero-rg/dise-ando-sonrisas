@@ -167,7 +167,7 @@ function destroy(result: TreatmentResultRecord): void {
 onBeforeUnmount(clearPreviews);
 
 const fieldClass =
-    'w-full rounded-xl border border-luda-navy/10 bg-white px-3.5 py-2.5 text-sm text-luda-ink shadow-sm outline-none transition placeholder:text-luda-ink/30 focus:border-luda-sky focus:ring-2 focus:ring-luda-sky/40';
+    'w-full rounded-xl border border-luda-plum/10 bg-white px-3.5 py-2.5 text-sm text-luda-ink shadow-sm outline-none transition placeholder:text-luda-ink/30 focus:border-luda-rose/40 focus:ring-2 focus:ring-luda-rose/25';
 </script>
 
 <template>
@@ -179,12 +179,12 @@ const fieldClass =
         >
             <div>
                 <p
-                    class="text-[11px] font-semibold tracking-[0.22em] text-luda-blue uppercase"
+                    class="text-[11px] font-semibold tracking-[0.22em] text-luda-rose uppercase"
                 >
                     Panel administrativo
                 </p>
                 <h1
-                    class="mt-1 text-2xl font-semibold tracking-tight text-luda-navy sm:text-3xl"
+                    class="mt-1 text-2xl font-semibold tracking-tight text-luda-plum sm:text-3xl"
                 >
                     Resultados antes y después
                 </h1>
@@ -196,7 +196,7 @@ const fieldClass =
 
             <button
                 type="button"
-                class="inline-flex w-fit items-center gap-2 rounded-full bg-luda-navy px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-luda-navy/20 transition hover:bg-luda-blue"
+                class="inline-flex w-fit items-center gap-2 rounded-full bg-luda-plum px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-luda-plum/20 transition hover:bg-luda-rose"
                 @click="openCreate"
             >
                 <Plus class="size-4" />
@@ -206,9 +206,9 @@ const fieldClass =
 
         <div class="flex flex-wrap items-center gap-2 text-xs">
             <span
-                class="inline-flex items-center gap-1.5 rounded-full border border-luda-navy/5 bg-white px-3 py-1.5 font-semibold text-luda-ink/60 shadow-sm"
+                class="inline-flex items-center gap-1.5 rounded-full border border-luda-plum/5 bg-white px-3 py-1.5 font-semibold text-luda-ink/60 shadow-sm"
             >
-                <Images class="size-3.5 text-luda-blue" />
+                <Images class="size-3.5 text-luda-rose" />
                 {{ results.length }} resultados
             </span>
             <span
@@ -227,15 +227,15 @@ const fieldClass =
 
         <section
             v-if="results.length === 0"
-            class="flex flex-col items-center justify-center gap-4 rounded-2xl border border-luda-navy/5 bg-white px-6 py-16 text-center shadow-[0_24px_70px_-55px_rgba(0,19,48,0.55)]"
+            class="flex flex-col items-center justify-center gap-4 rounded-2xl border border-luda-plum/5 bg-white px-6 py-16 text-center shadow-[0_24px_70px_-55px_rgba(51,0,31,0.55)]"
         >
             <span
-                class="flex size-14 items-center justify-center rounded-2xl bg-luda-mist text-luda-blue"
+                class="flex size-14 items-center justify-center rounded-2xl bg-luda-mist text-luda-rose"
             >
                 <ImagePlus class="size-7" />
             </span>
             <div>
-                <p class="text-sm font-semibold text-luda-navy">
+                <p class="text-sm font-semibold text-luda-plum">
                     Aún no hay resultados publicados
                 </p>
                 <p class="mt-1 max-w-md text-xs leading-relaxed text-luda-ink/50">
@@ -245,7 +245,7 @@ const fieldClass =
             </div>
             <button
                 type="button"
-                class="inline-flex items-center gap-2 rounded-full bg-luda-navy px-4 py-2 text-xs font-semibold text-white transition hover:bg-luda-blue"
+                class="inline-flex items-center gap-2 rounded-full bg-luda-plum px-4 py-2 text-xs font-semibold text-white transition hover:bg-luda-rose"
                 @click="openCreate"
             >
                 <Plus class="size-3.5" />
@@ -257,9 +257,9 @@ const fieldClass =
             <article
                 v-for="result in results"
                 :key="result.id"
-                class="overflow-hidden rounded-2xl border border-luda-navy/5 bg-white shadow-[0_18px_50px_-42px_rgba(0,19,48,0.55)]"
+                class="overflow-hidden rounded-2xl border border-luda-plum/5 bg-white shadow-[0_18px_50px_-42px_rgba(51,0,31,0.55)]"
             >
-                <div class="grid grid-cols-2 gap-px bg-luda-navy/5">
+                <div class="grid grid-cols-2 gap-px bg-luda-plum/5">
                     <div class="relative aspect-[4/3] overflow-hidden bg-luda-mist">
                         <img
                             :src="result.imagen_antes"
@@ -268,7 +268,7 @@ const fieldClass =
                             loading="lazy"
                         />
                         <span
-                            class="absolute top-2 left-2 rounded-full bg-luda-navy/85 px-2 py-0.5 text-[9px] font-semibold tracking-[0.12em] text-white uppercase backdrop-blur"
+                            class="absolute top-2 left-2 rounded-full bg-luda-plum/85 px-2 py-0.5 text-[9px] font-semibold tracking-[0.12em] text-white uppercase backdrop-blur"
                         >
                             Antes
                         </span>
@@ -281,7 +281,7 @@ const fieldClass =
                             loading="lazy"
                         />
                         <span
-                            class="absolute top-2 right-2 rounded-full bg-luda-blue/90 px-2 py-0.5 text-[9px] font-semibold tracking-[0.12em] text-white uppercase backdrop-blur"
+                            class="absolute top-2 right-2 rounded-full bg-luda-rose/90 px-2 py-0.5 text-[9px] font-semibold tracking-[0.12em] text-white uppercase backdrop-blur"
                         >
                             Después
                         </span>
@@ -293,12 +293,12 @@ const fieldClass =
                         <div class="min-w-0">
                             <p
                                 v-if="result.servicio"
-                                class="text-[10px] font-semibold tracking-[0.14em] text-luda-blue uppercase"
+                                class="text-[10px] font-semibold tracking-[0.14em] text-luda-rose uppercase"
                             >
                                 {{ result.servicio }}
                             </p>
                             <h2
-                                class="mt-1 truncate text-sm font-semibold text-luda-navy"
+                                class="mt-1 truncate text-sm font-semibold text-luda-plum"
                                 :title="result.titulo"
                             >
                                 {{ result.titulo }}
@@ -326,7 +326,7 @@ const fieldClass =
                     <div class="mt-4 flex items-center justify-between gap-2">
                         <button
                             type="button"
-                            class="inline-flex items-center gap-1.5 rounded-lg border border-luda-navy/10 px-2.5 py-1.5 text-[11px] font-semibold text-luda-ink/60 transition hover:bg-luda-mist hover:text-luda-navy"
+                            class="inline-flex items-center gap-1.5 rounded-lg border border-luda-plum/10 px-2.5 py-1.5 text-[11px] font-semibold text-luda-ink/60 transition hover:bg-luda-mist hover:text-luda-plum"
                             @click="toggleVisibility(result)"
                         >
                             <EyeOff v-if="result.visible" class="size-3.5" />
@@ -337,7 +337,7 @@ const fieldClass =
                         <div class="flex items-center gap-1.5">
                             <button
                                 type="button"
-                                class="flex size-8 items-center justify-center rounded-lg border border-luda-navy/10 text-luda-ink/55 transition hover:border-luda-sky hover:bg-luda-mist hover:text-luda-blue"
+                                class="flex size-8 items-center justify-center rounded-lg border border-luda-plum/10 text-luda-ink/55 transition hover:border-luda-rose/40 hover:bg-luda-mist hover:text-luda-rose"
                                 title="Editar resultado"
                                 aria-label="Editar resultado"
                                 @click="openEdit(result)"
@@ -346,7 +346,7 @@ const fieldClass =
                             </button>
                             <button
                                 type="button"
-                                class="flex size-8 items-center justify-center rounded-lg border border-luda-navy/10 text-luda-ink/55 transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600"
+                                class="flex size-8 items-center justify-center rounded-lg border border-luda-plum/10 text-luda-ink/55 transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600"
                                 title="Eliminar resultado"
                                 aria-label="Eliminar resultado"
                                 @click="destroy(result)"
@@ -361,8 +361,8 @@ const fieldClass =
 
         <Dialog v-model:open="dialogOpen">
             <DialogScrollContent class="gap-0 border-0 bg-white p-0 sm:max-w-2xl">
-                <div class="border-b border-luda-navy/5 px-6 pt-6 pb-5">
-                    <DialogTitle class="text-lg font-semibold text-luda-navy">
+                <div class="border-b border-luda-plum/5 px-6 pt-6 pb-5">
+                    <DialogTitle class="text-lg font-semibold text-luda-plum">
                         {{ editing ? 'Editar resultado' : 'Nuevo resultado' }}
                     </DialogTitle>
                     <DialogDescription class="mt-1 text-sm text-luda-ink/55">
@@ -376,7 +376,7 @@ const fieldClass =
                         <div class="grid gap-2 sm:col-span-2">
                             <label
                                 for="resultado_titulo"
-                                class="text-xs font-semibold text-luda-navy"
+                                class="text-xs font-semibold text-luda-plum"
                             >
                                 Título del resultado
                             </label>
@@ -385,7 +385,7 @@ const fieldClass =
                                 v-model="form.titulo"
                                 type="text"
                                 maxlength="120"
-                                placeholder="Ej. Rehabilitación con carillas"
+                                placeholder="Ej. Ortodoncia con brackets"
                                 :class="[
                                     fieldClass,
                                     form.errors.titulo
@@ -399,7 +399,7 @@ const fieldClass =
                         <div class="grid gap-2">
                             <label
                                 for="resultado_servicio"
-                                class="text-xs font-semibold text-luda-navy"
+                                class="text-xs font-semibold text-luda-plum"
                             >
                                 Servicio
                                 <span class="font-normal text-luda-ink/40">
@@ -432,7 +432,7 @@ const fieldClass =
                         <div class="grid gap-2">
                             <label
                                 for="resultado_orden"
-                                class="text-xs font-semibold text-luda-navy"
+                                class="text-xs font-semibold text-luda-plum"
                             >
                                 Orden
                             </label>
@@ -458,7 +458,7 @@ const fieldClass =
                         <div class="grid gap-2 sm:col-span-2">
                             <label
                                 for="resultado_descripcion"
-                                class="text-xs font-semibold text-luda-navy"
+                                class="text-xs font-semibold text-luda-plum"
                             >
                                 Descripción breve
                             </label>
@@ -488,12 +488,12 @@ const fieldClass =
                     <div class="grid gap-4 sm:grid-cols-2">
                         <div class="grid gap-2">
                             <div class="flex items-center justify-between gap-2">
-                                <span class="text-xs font-semibold text-luda-navy">
+                                <span class="text-xs font-semibold text-luda-plum">
                                     Foto del antes
                                 </span>
                                 <span
                                     v-if="beforePreview"
-                                    class="flex items-center gap-1 text-[10px] font-semibold text-luda-blue"
+                                    class="flex items-center gap-1 text-[10px] font-semibold text-luda-rose"
                                 >
                                     <Upload class="size-3" />
                                     Cambiar
@@ -501,10 +501,10 @@ const fieldClass =
                             </div>
                             <label
                                 :class="[
-                                    'group relative flex aspect-[4/3] cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-dashed bg-luda-mist/60 transition hover:border-luda-sky',
+                                    'group relative flex aspect-[4/3] cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-dashed bg-luda-mist/60 transition hover:border-luda-rose/40',
                                     form.errors.imagen_antes
                                         ? 'border-red-300'
-                                        : 'border-luda-navy/10',
+                                        : 'border-luda-plum/10',
                                 ]"
                             >
                                 <img
@@ -517,8 +517,8 @@ const fieldClass =
                                     v-else
                                     class="flex flex-col items-center gap-1.5 px-4 text-center"
                                 >
-                                    <ImagePlus class="size-7 text-luda-blue" />
-                                    <span class="text-xs font-semibold text-luda-navy">
+                                    <ImagePlus class="size-7 text-luda-rose" />
+                                    <span class="text-xs font-semibold text-luda-plum">
                                         Selecciona una imagen
                                     </span>
                                     <span class="text-[10px] text-luda-ink/45">
@@ -537,12 +537,12 @@ const fieldClass =
 
                         <div class="grid gap-2">
                             <div class="flex items-center justify-between gap-2">
-                                <span class="text-xs font-semibold text-luda-navy">
+                                <span class="text-xs font-semibold text-luda-plum">
                                     Foto del después
                                 </span>
                                 <span
                                     v-if="afterPreview"
-                                    class="flex items-center gap-1 text-[10px] font-semibold text-luda-blue"
+                                    class="flex items-center gap-1 text-[10px] font-semibold text-luda-rose"
                                 >
                                     <Upload class="size-3" />
                                     Cambiar
@@ -550,10 +550,10 @@ const fieldClass =
                             </div>
                             <label
                                 :class="[
-                                    'group relative flex aspect-[4/3] cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-dashed bg-luda-mist/60 transition hover:border-luda-sky',
+                                    'group relative flex aspect-[4/3] cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-dashed bg-luda-mist/60 transition hover:border-luda-rose/40',
                                     form.errors.imagen_despues
                                         ? 'border-red-300'
-                                        : 'border-luda-navy/10',
+                                        : 'border-luda-plum/10',
                                 ]"
                             >
                                 <img
@@ -566,8 +566,8 @@ const fieldClass =
                                     v-else
                                     class="flex flex-col items-center gap-1.5 px-4 text-center"
                                 >
-                                    <ImagePlus class="size-7 text-luda-blue" />
-                                    <span class="text-xs font-semibold text-luda-navy">
+                                    <ImagePlus class="size-7 text-luda-rose" />
+                                    <span class="text-xs font-semibold text-luda-plum">
                                         Selecciona una imagen
                                     </span>
                                     <span class="text-[10px] text-luda-ink/45">
@@ -586,15 +586,15 @@ const fieldClass =
                     </div>
 
                     <label
-                        class="flex cursor-pointer items-start gap-3 rounded-xl border border-luda-navy/10 bg-luda-mist/50 px-4 py-3"
+                        class="flex cursor-pointer items-start gap-3 rounded-xl border border-luda-plum/10 bg-luda-mist/50 px-4 py-3"
                     >
                         <input
                             v-model="form.visible"
                             type="checkbox"
-                            class="mt-0.5 size-4 rounded border-luda-navy/20 text-luda-blue focus:ring-luda-sky"
+                            class="mt-0.5 size-4 rounded border-luda-plum/20 text-luda-rose focus:ring-luda-rose/40"
                         />
                         <span>
-                            <span class="block text-xs font-semibold text-luda-navy">
+                            <span class="block text-xs font-semibold text-luda-plum">
                                 Mostrar en el sitio
                             </span>
                             <span class="block text-[11px] leading-relaxed text-luda-ink/50">
@@ -605,12 +605,12 @@ const fieldClass =
                     </label>
 
                     <div
-                        class="flex flex-col-reverse gap-2 border-t border-luda-navy/5 pt-4 sm:flex-row sm:justify-end"
+                        class="flex flex-col-reverse gap-2 border-t border-luda-plum/5 pt-4 sm:flex-row sm:justify-end"
                     >
                         <Button
                             type="button"
                             variant="outline"
-                            class="border-luda-navy/10 text-luda-navy hover:bg-luda-mist"
+                            class="border-luda-plum/10 text-luda-plum hover:bg-luda-mist"
                             @click="closeDialog"
                         >
                             Cancelar
@@ -618,7 +618,7 @@ const fieldClass =
                         <Button
                             type="submit"
                             :disabled="form.processing"
-                            class="bg-luda-navy text-white hover:bg-luda-blue disabled:opacity-50"
+                            class="bg-luda-plum text-white hover:bg-luda-rose disabled:opacity-50"
                         >
                             <LoaderCircle
                                 v-if="form.processing"

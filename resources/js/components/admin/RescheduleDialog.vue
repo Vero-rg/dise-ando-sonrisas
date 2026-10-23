@@ -111,13 +111,13 @@ function submit(): void {
         <DialogScrollContent class="gap-0 border-0 bg-luda-mist p-0 sm:max-w-xl">
             <div
                 v-if="appointment"
-                class="flex items-start justify-between gap-4 border-b border-luda-navy/5 bg-white px-6 pt-6 pb-5"
+                class="flex items-start justify-between gap-4 border-b border-luda-plum/5 bg-white px-6 pt-6 pb-5"
             >
                 <div>
                     <DialogTitle
-                        class="flex items-center gap-2 text-lg font-semibold text-luda-navy"
+                        class="flex items-center gap-2 text-lg font-semibold text-luda-plum"
                     >
-                        <CalendarClock class="size-5 text-luda-blue" />
+                        <CalendarClock class="size-5 text-luda-rose" />
                         Reagendar cita
                     </DialogTitle>
                     <DialogDescription class="mt-1 text-sm text-luda-ink/55">
@@ -125,7 +125,7 @@ function submit(): void {
                         {{ formatPhone(appointment.paciente_telefono) }}
                     </DialogDescription>
                     <p class="mt-2 text-xs text-luda-ink/45">
-                        <span class="font-mono font-semibold text-luda-blue">
+                        <span class="font-mono font-semibold text-luda-rose">
                             {{ appointment.codigo_folio }}
                         </span>
                         · Actualmente
@@ -149,11 +149,11 @@ function submit(): void {
                 />
 
                 <div
-                    class="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-luda-navy/5 bg-white px-4 py-3"
+                    class="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-luda-plum/5 bg-white px-4 py-3"
                 >
                     <div class="text-xs text-luda-ink/55">
                         Nueva fecha:
-                        <span class="font-semibold text-luda-navy">
+                        <span class="font-semibold text-luda-plum">
                             {{
                                 form.fecha
                                     ? formatLongDate(form.fecha)
@@ -178,19 +178,19 @@ function submit(): void {
             </div>
 
             <DialogFooter
-                class="flex-col-reverse gap-2 rounded-b-lg border-t border-luda-navy/5 bg-white px-5 py-4 sm:flex-row sm:justify-end sm:px-6"
+                class="flex-col-reverse gap-2 rounded-b-lg border-t border-luda-plum/5 bg-white px-5 py-4 sm:flex-row sm:justify-end sm:px-6"
             >
                 <Button
                     type="button"
                     variant="outline"
-                    class="border-luda-navy/10 text-luda-navy hover:bg-luda-mist"
+                    class="border-luda-plum/10 text-luda-plum hover:bg-luda-mist"
                     @click="emit('close')"
                 >
                     Cancelar
                 </Button>
                 <Button
                     type="button"
-                    class="bg-luda-navy text-white hover:bg-luda-blue disabled:opacity-50"
+                    class="bg-luda-plum text-white hover:bg-luda-rose disabled:opacity-50"
                     :disabled="form.processing || !form.fecha || !form.hora"
                     @click="submit"
                 >

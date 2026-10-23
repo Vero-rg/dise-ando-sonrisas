@@ -11,9 +11,14 @@ return [
     |
     */
 
-    'name' => 'LuDa Dental',
+    'name' => 'Diseñando Sonrisas',
 
-    'tagline' => 'Clínica de Especialidades Odontológicas',
+    'tagline' => 'Ortodoncia y Odontopediatría',
+
+    'dentist' => [
+        'name' => 'Dra. Adriana Gómez',
+        'credentials' => 'Cirujana Dentista · Ortodoncia · Odontopediatra',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -43,22 +48,21 @@ return [
     |
     */
 
-    'whatsapp' => '523317118089',
+    'whatsapp' => '523328012102',
 
     'phones' => [
-        ['label' => '33 1711 8089', 'number' => '3317118089'],
-        ['label' => '33 3968 5021', 'number' => '3339685021'],
+        ['label' => '33 2801 2102', 'number' => '3328012102'],
     ],
 
     'address' => [
-        'line1' => 'Plaza Península',
-        'line2' => 'Zapopan, Jalisco, México',
-        'reference' => 'Confirma con nosotros el local exacto dentro de la plaza al agendar tu cita.',
+        'line1' => 'Av. Valle de Atemajac 1704',
+        'line2' => 'Jardines del Valle, 45138 Zapopan, Jal.',
+        'reference' => 'Llega 10 minutos antes de tu cita para revisar tu expediente.',
     ],
 
     'map' => [
-        'embed_url' => 'https://www.google.com/maps?q=Plaza%20Pen%C3%ADnsula%2C%20Zapopan%2C%20Jalisco&output=embed',
-        'link' => 'https://www.google.com/maps/search/?api=1&query=Plaza%20Pen%C3%ADnsula%2C%20Zapopan%2C%20Jalisco',
+        'embed_url' => 'https://www.google.com/maps?q=Av.%20Valle%20de%20Atemajac%201704%2C%20Jardines%20del%20Valle%2C%2045138%20Zapopan%2C%20Jal.&output=embed',
+        'link' => 'https://www.google.com/maps/search/?api=1&query=Av.%20Valle%20de%20Atemajac%201704%2C%20Jardines%20del%20Valle%2C%2045138%20Zapopan%2C%20Jal.',
     ],
 
 ];

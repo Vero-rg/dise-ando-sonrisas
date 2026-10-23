@@ -10,7 +10,7 @@ final class ClinicBranding
     public static function toArray(): array
     {
         return [
-            'name' => (string) config('clinic.name', 'LuDa Dental'),
+            'name' => (string) config('clinic.name', 'Diseñando Sonrisas'),
             'header_logo' => self::logoUrl('clinic.logos.header'),
             'footer_logo' => self::logoUrl('clinic.logos.footer'),
         ];

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import LuDaLogo from './LuDaLogo.vue';
+import BrandWordmark from './BrandWordmark.vue';
 
 const props = withDefaults(
     defineProps<{
@@ -11,7 +11,7 @@ const props = withDefaults(
     }>(),
     {
         src: '',
-        alt: 'LuDa Dental',
+        alt: 'Diseñando Sonrisas',
         tone: 'dark',
         imgClass: 'h-10 w-auto max-w-[220px] object-contain',
     },
@@ -35,5 +35,5 @@ watch(
         :class="imgClass"
         @error="failed = true"
     />
-    <LuDaLogo v-else :tone="tone" />
+    <BrandWordmark v-else :tone="tone" />
 </template>
